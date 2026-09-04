@@ -270,3 +270,58 @@ body {
     .chat-footer { flex-direction: column; align-items: stretch; }
     .chat-footer button { justify-content: center; }
 }
+
+/* ===== KEYWORD HIGHLIGHT ===== */
+.keyword-highlight {
+    background: #f9e74b;
+    color: #0a2a44;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* ===== RIPPLE EFFECT ===== */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(249, 231, 75, 0.4);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.chat-footer button {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== TYPING INDICATOR ===== */
+#typingIndicator {
+    margin: 8px 0;
+    padding: 12px 20px;
+    border-radius: 24px;
+    background: #e6e0c0;
+    color: #0a2a44;
+    border-bottom-left-radius: 6px;
+    border-left: 5px solid #1f8b4c;
+    animation: fadeIn 0.25s ease;
+}
+
+/* ===== ANIMAÇÃO DE DIGITAÇÃO ===== */
+.msg-text.typing::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: #1f8b4c;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

@@ -180,23 +180,6 @@ async function enviarMensagem() {
   }
 }
 
-// Adicionar no script.js
-document.querySelectorAll('.quick-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-        const question = chip.dataset.question;
-        if (question) {
-            document.getElementById('userInput').value = question;
-            enviarMensagem();
-        }
-    });
-});
-
-
-document.getElementById('clearBtn').addEventListener('click', () => {
-    document.getElementById('chatMessages').innerHTML = '';
-    adicionarMensagem(mensagemInicial, 'bot');
-});
-
 /* ---- Event Listeners ---- */
 btnEnviar.addEventListener("click", (e) => {
   createRipple(e, btnEnviar);

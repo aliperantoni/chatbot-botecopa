@@ -18,6 +18,12 @@ A aplicação foi desenvolvida para oferecer uma experiência de conversação r
 
 ---
 
+### Demonstração
+
+Acesse o chatbot em produção: [**https://botecopa.netlify.app/**](https://botecopa.netlify.app/)
+
+---
+
 ### Funcionalidades
 
 - ✅ Interface de chat limpa e moderna com tema amarelo/azul
@@ -25,7 +31,9 @@ A aplicação foi desenvolvida para oferecer uma experiência de conversação r
 - ✅ Restrição estrita ao tema de Copa do Mundo de Seleções Masculinas
 - ✅ Mensagem de boas-vindas personalizada
 - ✅ Formatação automática de texto (negrito, listas, tabelas)
+- ✅ Destaque automático de palavras-chave relevantes
 - ✅ Indicador de digitação durante o processamento
+- ✅ Efeito de máquina de escrever nas respostas
 - ✅ Atalho de teclado (Enter) para enviar mensagens
 - ✅ Design responsivo para desktop e dispositivos móveis
 - ✅ Animações suaves e modernas
@@ -55,6 +63,7 @@ A aplicação utiliza o modelo `openai/gpt-oss-120b` da Groq, com configuraçõe
 - **Flask-CORS**: Liberação de requisições entre domínios
 - **Groq SDK**: Cliente oficial para consumo da API Groq
 - **Python-dotenv**: Gerenciamento de variáveis de ambiente
+- **Gunicorn**: Servidor WSGI para deploy
 
 ---
 
@@ -93,12 +102,10 @@ BoteCopa/
 2. **Configure o Back-End:**
    ```bash
    cd backend
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
    pip install -r requirements.txt
-   ```
-
-   Ou instale manualmente:
-   ```bash
-   pip install flask flask-cors python-dotenv groq
    ```
 
 3. **Configure a chave da API:**
@@ -125,7 +132,7 @@ BoteCopa/
 1. A aplicação iniciará com uma mensagem de boas-vindas.
 2. Digite sua pergunta sobre a Copa do Mundo no campo de texto.
 3. Pressione **Enter** ou clique no botão **Enviar** para obter a resposta.
-4. O bot processará sua pergunta e retornará uma resposta formatada.
+4. O bot processará sua pergunta e retornará uma resposta com efeito de máquina de escrever.
 5. As respostas incluem formatação automática (negrito, listas e tabelas).
 
 ---
@@ -180,6 +187,10 @@ Projeto desenvolvido para estudo, experimentação com APIs de Inteligência Art
 
 This project is a specialized chatbot for **Men's FIFA World Cups**, developed to provide information about results, top scorers, cards, records, curiosities, statistics, history, and much more – updated through the 2026 World Cup.
 
+### Live Demo
+
+Access the chatbot in production: [**https://botecopa.netlify.app/**](https://botecopa.netlify.app/)
+
 ### Features
 
 - ✅ Clean and modern chat interface with yellow/blue theme
@@ -187,7 +198,9 @@ This project is a specialized chatbot for **Men's FIFA World Cups**, developed t
 - ✅ Strict focus on Men's World Cup topics
 - ✅ Personalized welcome message
 - ✅ Automatic text formatting (bold, lists, tables)
+- ✅ Automatic keyword highlighting
 - ✅ Typing indicator during processing
+- ✅ Typewriter effect on responses
 - ✅ Keyboard shortcut (Enter) for sending messages
 - ✅ Responsive design for desktop and mobile
 - ✅ Smooth and modern animations
@@ -198,7 +211,7 @@ This project is a specialized chatbot for **Men's FIFA World Cups**, developed t
 - HTML5, CSS3, JavaScript
 
 #### Back-End
-- Python 3, Flask, Flask-CORS, Groq SDK
+- Python 3, Flask, Flask-CORS, Groq SDK, Gunicorn
 
 ### Project Structure
 
@@ -221,6 +234,8 @@ BoteCopa/
 git clone https://github.com/seu-usuario/BoteCopa.git
 cd BoteCopa
 cd backend
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
@@ -235,8 +250,6 @@ python app.py
 ```
 
 Open `frontend/index.html` in your browser.
-
----
 
 ### AI Development
 
